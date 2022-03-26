@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;400&display=swap');
+
+:root {
+    --backgroundcolor: #222222;
+    --white: #FFFFFF;
+  }
+
 * {
     margin: 0;
     padding: 0;
@@ -5,8 +12,9 @@
 }
 
 body {
-    background-color: #222222;
+    background-color: var(--backgroundcolor);
 }
+
 .header{
     display: flex;
     align-items: center;
@@ -16,66 +24,178 @@ body {
     margin-top: -45px;
 }
 
-
 .mrvl-img{
-    flex-shrink: 0;
-    min-width: 100%;
+    width: 100%;
     max-height: 100%;
-    height: 750px;
+    height: auto;
 }
 
 .mrvl-logo{
-    margin-top: -266px;
+    margin-top: -20%;
     flex-shrink: 0;
     width: 31.5%;
-    height: 193px;
+    height: auto;
+    -webkit-filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.521));
     filter: drop-shadow(1px 1px 1px rgba(255, 255, 255, 0.521));
-}
-.chars-container{
-    margin-top: 200px;
-    margin-left: 150px;
-    margin-right: 150px;
-}
-.characters {
-    display: flex;
-    justify-content:  center;
-    align-items: center;
-    flex-wrap: wrap;
-    position: relative;
+ 
 }
 
-.character{
+.container{
+    margin-top: 118px;
+}
+
+.chars-container{
+    margin: auto;
+    width: 64%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 2px; /* this */
+}
+
+.character {
+    border-top: 1px solid var(--white);
     display: flex;
     flex-shrink: 0;
-    width: 164px;
-    height: 255px;
-    padding: 20px;
+    width: 79%;
+    margin: auto;
+    height: auto;
+    padding-top: 10px;
+    margin-top: -60px;
+
 }
 
-
-
-
-.box{
-    position:absolute;
-    z-index:-1;
-    top:40px;
-    left:150px;
-    width:50px;
-    height:280px;
-    border:2px solid #ffffff;
-    background-color:transparent;
-}
-.container-img{
-    display: flex;
-    justify-content: space-around;
-    height: 280px;
-    width: 180px;
+.box {
     position: relative;
-    margin-top: 75px;
-    margin-right: -164px;
-    z-index:-1;
-    border-top: 0.1em solid #9ee780;
-    border-right: 0.1em solid rgb(240, 241, 141);
-    border-bottom: 0.1em solid rgb(145, 236, 252);
-    border-left: 0.1em solid rgb(248, 115, 106);
+    border: 1px solid var(--white);
+    background-color: transparent;
+    margin-left: 8px;
+    margin-right: 8px;
+    margin-top: 130px;
+    height: auto;
+}
+
+.box p {
+    text-align: center;
+    color: var(--white);
+    padding: 20px 15px;
+    font-family: 'Roboto', sans-serif;
+    line-height: 21.09px;
+}
+
+.pagination {
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 143px;
+    width: auto;
+    position: absolute;
+    right: 17%;
+
+  }
+  
+  .pagination a {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #7E7E7E;
+    padding: 8px 16px;
+    text-decoration: none;
+    
+  }
+  
+  .pagination a:hover:not(.active) {background-color: #ddd;}
+
+
+
+  /******** Extra small devices  *********/
+
+@media only screen and (max-width: 600px) {
+    .chars-container{
+        margin: auto;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    .box {
+        margin: auto;
+        margin-top: 130px;
+        }
+
+    .mrvl-img{
+        width: 100%;
+        height: 350px;
+        }
+        
+    .mrvl-logo{
+        margin-top: -35%;
+        width: 34.5%;
+        height: auto;
+        }
+        
+    .container{
+        margin-top: 90px;
+        }
+
+    .box p{
+        line-height: 50px;
+        }
+
+    p{
+        font-size: 14px;
+        }
+    
+    .pagination{
+       position:relative;
+       display:flex;
+       justify-content: center;
+       align-items: center;
+       right: 0;
+    }
+     .pagination  a {
+             font-size: 10px;
+            
+           }
+
+
+}
+
+/********* Small devices *********/
+@media only screen and (min-width: 600px) {
+    .box {
+       width: 29%;
+        }
+}
+
+/********* Medium devices *********/
+@media only screen and (min-width: 768px) {
+    .box {
+        width: 29%;
+     }
+
+     .pagination{
+        right: 17%;
+    }
+}
+
+/********* Large devices *********/
+@media only screen and (min-width: 992px) {
+    .box {
+       width: auto;
+    }
+
+    .pagination{
+        right: 20%;
+    }
+}
+
+/********* Extra Large devices *********/
+@media only screen and (min-width: 1200px) {
+    .box {
+    width: 178px;
+    }
+
+    .pagination{
+        right: 17%;
+    }
 }
